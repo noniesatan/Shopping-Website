@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shopping Web_1</title>
+    <script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <nav>
+    <div class="nav-container">
+        <a href="index.html">
+            <img src="./images/card.svg" class="nav-img">
+            
+        </a>
+        <div class="nav-profile">
+            <p class="nav-profilename">Your Cart</p>
+            <div  style="cursor: pointer;" class="nav-profile-cart">
+                <img src="./images/cart.svg" onclick="Opencart()" class="cart">
+                <div id="cart_count" class="cart_count" style="display: none;">
+                    0
+                </div>
+            </div>
+
+        </div>
+    </div>
+   </nav> 
+   <div class="container">
+        <div class="sidebar">
+            <input onkeyup="searchsomething(this)" id="txt_search" type="text" class="serach-items" placeholder="Search">
+            <a onclick="searchproduct('shoe')"  class="sidebar-items">
+                Shoes
+            </a>
+            <a onclick="searchproduct('shirt')" class="sidebar-items">
+                Shirt
+            </a>
+            <a onclick="searchproduct('accesorie')" class="sidebar-items">
+                Accesories
+            </a>
+            <a onclick="searchproduct('all')" class="sidebar-items">
+                All product
+            </a>
+           
+        </div>
+        
+        <div id="productlist"  class="product">
+            
+           
+                
+            
+            
+        </div>
+   </div>
+    <div id="modalDesc" class="modal" style="display: none;">
+        <div onclick= "closeModal()" class="modal-bg"></div>
+        <div class="modal-page">
+            <H3>Product Detail</H3>
+            <br>
+            <div class="modaldesc-content">
+                <img id="mdd-img" class="modaldesc-img" src="https://images.unsplash.com/photo-1565379793984-e65b51b33b37?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y29udmVyc2V8ZW58MHx8MHx8fDA%3D" alt="">
+                <div class="modaldesc-detail">
+                        <p id="mdd-name" style="font-size: 1.5vw;">Product Name</p>
+                        <p id="mdd-price" style="font-size: 1.3vw;">AUD 500 </p>
+                        <br>
+                        <p id="mdd-desc" style="color: rgb(233, 151, 50);">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi, atque.</p>
+                        <br>
+                        <div class="btn-control">
+                            <button onclick= "closeModal()" class="btn">
+                                Close
+                            </button>
+                            <button onclick="addtocart()" class="btn btn-buy">
+                                Add To Cart
+                            </button>
+                        </div>
+                </div>
+
+            </div>
+
+        </div>
+            
+    </div>
+    <div id="modalcart" class="modal" style="display: none;">
+        <div onclick= "closeModal()" class="modal-bg"></div>
+        <div class="modal-page">
+            <H3>My Cart</H3>
+            <br>
+            <div id="mycart" class="cartlist">
+                
+                
+                
+                
+                
+            </div>
+            <div class="btn-control">
+                <button onclick= "closeModal()" class="btn">
+                    Close
+                </button>
+                <button class="btn btn-buy">
+                    Buy
+                </button>
+
+            </div>
+        </div>
+            
+    </div>
+<footer>
+    Copyright © 2023 Nont Sumate All Rights Reserved
+</footer>
+</body>
+</html>
